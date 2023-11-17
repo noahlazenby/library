@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <dialog id="bookForm">
+            <form>
+                <p>
+                    <label for="bookTitle">What is the title of the book?</label>
+                    <input type="text" name="bookTitle" id="bookTitle"><br>
+                    <label for="bookAuthor">Who is the author of the book?</label>
+                    <input type="text" name="bookAuthor" id="bookAuthor"><br>
+                    <label for="bookPageCount">How many pages is the book?</label>
+                    <input type="number" name="bookPageCount" id="bookPageCount"><br>
+                    <label for="bookRead">Have you read the book?</label>
+                    <input type="text" name="bookRead" id="bookRead"><br>
+                    <input type="submit" value="Submit" id="submitButton">
+                </p>
+            </form>
+        </dialog>
+        <button id="addBook">Add Book</button>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Number of Pages</th>
+                <th>Have you read it yet?</th>
+            </tr>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
