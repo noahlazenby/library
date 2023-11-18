@@ -12,6 +12,7 @@ const libraryTable = document.querySelector("table");
 const bookFormDialog = document.querySelector("#bookForm");
 const submitButton = document.querySelector("#submitButton");
 
+
 /*  accept user input
     add book details to library array
 */
@@ -41,6 +42,7 @@ function addBook(title, author, pages, read) {
     return newBook;
 };
 
+
 /*function addBookToLibrary() {
     myLibrary.forEach(function(book) {
         const newRow = libraryTable.insertRow();
@@ -56,7 +58,19 @@ function addBookToLibrary(book) {
     const newRow = libraryTable.insertRow();
     const rowData = [book.title, book.author, book.pages, book.isRead];
     rowData.forEach(function(cellData) {
-        const cell = newRow.insertCell();
+        let cell = newRow.insertCell();
         cell.innerHTML = cellData;
+    });
+    let button = document.createElement("button");
+    let td = document.createElement("td");
+    button.innerText = "Delete";
+    button.id = "deleteButton";
+    button.setAttribute('data-row', newRow.rowIndex);
+    button.setAttribute('data-index', myLibrary.indexOf(book));
+    td.append(button);
+    newRow.append(td);
+    button.addEventListener("click", () => {
+        libraryTable.deleteRow(button.dataset.row);
+        myLibrary.splice(button.dataset.index,1);
     });
 };
