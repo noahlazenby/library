@@ -61,6 +61,8 @@ function addBookToLibrary(book) {
         let cell = newRow.insertCell();
         cell.innerHTML = cellData;
     });
+
+    /* add delete button to row */
     let button = document.createElement("button");
     let td = document.createElement("td");
     button.innerText = "Delete";
@@ -69,6 +71,27 @@ function addBookToLibrary(book) {
     button.setAttribute('data-index', myLibrary.indexOf(book));
     td.append(button);
     newRow.append(td);
+
+    /* add change read status button */
+    let button2 = document.createElement("button");
+    let td2 = document.createElement("td");
+    let cells = newRow.cells;
+    button2.innerText = "Change Read Status";
+    button2.id = "changeReadStatusButton";
+    button2.setAttribute('data-row', newRow.rowIndex);
+    button2.setAttribute('data-index', myLibrary.indexOf(book));
+    td2.append(button2);
+    newRow.append(td2);
+    button2.addEventListener("click", () => {
+        if (myLibrary[button2.dataset.index].isRead == "no") {
+            myLibrary[button2.dataset.index].isRead = "yes"
+        } else {
+            myLibrary[button2.dataset.index].isRead = "no";
+        };
+        cells[3].innerHTML = myLibrary[button2.dataset.index].isRead;
+    });
+
+    /* delete functionality */ 
     button.addEventListener("click", () => {
         libraryTable.deleteRow(button.dataset.row);
         myLibrary.splice(button.dataset.index,1);
