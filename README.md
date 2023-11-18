@@ -1,1 +1,1 @@
-# library
+My basic library webpage. Allows the user to add, delete and change the read status of books in the library. Currently only using local array storage, but plan to update later with a database and cloud connection. Enjoy! 
