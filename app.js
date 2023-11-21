@@ -84,7 +84,7 @@ function addBookToLibrary(book) {
     newRow.append(td2);
     button2.addEventListener("click", () => {
         if (myLibrary[button2.dataset.index].isRead == "no") {
-            myLibrary[button2.dataset.index].isRead = "yes"
+            myLibrary[button2.dataset.index].isRead = "yes";
         } else {
             myLibrary[button2.dataset.index].isRead = "no";
         };
