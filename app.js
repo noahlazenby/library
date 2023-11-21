@@ -42,6 +42,11 @@ function addBook(title, author, pages, read) {
     return newBook;
 };
 
+function toggleReadStatus(book) {
+    
+
+}
+
 
 /*function addBookToLibrary() {
     myLibrary.forEach(function(book) {
